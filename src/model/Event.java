@@ -7,6 +7,7 @@ import enums.Event_enum;
 
 @Entity
 @Table(name = "event_management")
+@NamedQuery(name="Event.findAll",query="SELECT u FROM Event u")
 public class Event implements Serializable{
 	
 	@Id

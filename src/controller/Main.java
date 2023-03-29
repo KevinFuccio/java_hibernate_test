@@ -10,6 +10,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		EventoDAO.save(new Event("DAJE ROMA DAJE",LocalDate.of(2023, 03, 31),Event_enum.PUBLIC.getEventEnum(),350));
+		System.out.println(EventoDAO.getAll());
 	}
 
 }

@@ -1,6 +1,9 @@
 package model;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 
 import utils.JpaUtil;
 
@@ -27,6 +30,10 @@ public class EventoDAO {
 		em.getTransaction().begin();
 		em.refresh(e);
 		em.getTransaction().commit();
+	}
+	static public List<Event> getAll(){
+		Query q = em.createNamedQuery("Event.findAll");
+		return q.getResultList();
 	}
 	
 }
