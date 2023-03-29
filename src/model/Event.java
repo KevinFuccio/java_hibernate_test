@@ -15,14 +15,15 @@ public class Event implements Serializable{
 	private int id;
 	private String title;
 	private LocalDate event_data;
-	private String event_type;
+	@Enumerated(EnumType.STRING)
+	private Event_enum event_type;
 	private int max_partecipants;
 	
 	public Event() {
 		
 	}
 
-	public Event(String title, LocalDate event_data, String event_type, int max_partecipants) {
+	public Event(String title, LocalDate event_data, Event_enum event_type, int max_partecipants) {
 		this.title = title;
 		this.event_data = event_data;
 		this.event_type = event_type;
@@ -45,11 +46,11 @@ public class Event implements Serializable{
 		this.event_data = event_data;
 	}
 
-	public String getEvent_type() {
+	public Event_enum getEvent_type() {
 		return event_type;
 	}
 
-	public void setEvent_type(String event_type) {
+	public void setEvent_type(Event_enum event_type) {
 		this.event_type = event_type;
 	}
 
